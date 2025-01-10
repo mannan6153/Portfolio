@@ -1,0 +1,59 @@
+<div class="nav-left-phone flex md:hidden z-30 flex-grow-0 flex-col justify-center h-[100svh] bg-dark1 rounded-lg w-[100svw]">
+    <div class="nav-phone-top-container z-40 p-5 flex justify-between items-center gap-3 absolute top-0 w-full">
+        <div class="flex gap-3 items-center">
+            <a href=""><img class="w-12 h-12 rounded-full" src="pp3.jpg" alt=""></a>
+            <a href=""><div class="title title-lg font-semibold">Portfolio</div></a>
+        </div>
+        <button class="close-nav text-5xl relative -top-2"><iconify-icon icon="material-symbols:left-panel-close" class="text-xl"></iconify-icon></button>
+    </div>
+    <div class="nav-bottom-container p-5 w-full absolute bottom-0 left-0">
+        <div class="links-phone flex flex-col gap-3 mb-5">
+            <div class="flex gap-3">
+                <div class="w-full"></div>
+                <div class="w-full"></div>
+                <a href="" class="nav-item flex flex-col gap-3 justify-center items-center w-full aspect-square rounded-lg text-light2 hover:text-light1 bg-dark2 hover:bg-dark1 transition">
+                    <iconify-icon icon="fa-solid:tools" class="text-3xl"></iconify-icon>Skills
+                </a>
+            </div>
+            <div class="flex gap-3">
+                <a href="" class="nav-item flex flex-col gap-3 justify-center items-center w-full aspect-square rounded-lg text-light2 hover:text-light1 bg-dark2 hover:bg-dark1 transition">
+                    <iconify-icon icon="fa-solid:tools" class="text-3xl"></iconify-icon>Skills
+                </a>
+                <a href="" class="nav-item flex flex-col gap-3 justify-center items-center w-full aspect-square rounded-lg text-light2 hover:text-light1 bg-dark2 hover:bg-dark1 transition">
+                    <iconify-icon icon="fa-solid:tools" class="text-3xl"></iconify-icon>Skills
+                </a>
+                <a href="" class="nav-item flex flex-col gap-3 justify-center items-center w-full aspect-square rounded-lg text-light2 hover:text-light1 bg-dark2 hover:bg-dark1 transition">
+                    <iconify-icon icon="fa-solid:tools" class="text-3xl"></iconify-icon>Skills
+                </a>
+            </div>
+        </div>
+        <div class="flex items-center gap-3">
+            <img class="w-12 h-12 rounded-full" src="pp3.jpg" alt="">
+            <div class="name-email-container flex flex-col gap-1">
+                <div class="name text-sm font-semibold">Md. Abdul Mannan</div>
+                <a class=" text-xs text-light2 hover:text-light1 transition" href="mailto:abdul.mannan6153@gmail.com">abdul.mannan6153@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .nav-left-phone{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        transition: left 0.5s cubic-bezier(0,0,0,.96);
+    }
+</style>
+
+<script>
+    var navPhone = document.querySelector(".nav-left-phone");
+    var showNav = document.querySelector(".show-nav");
+    var closeNav = document.querySelector(".close-nav");
+    showNav.addEventListener("click", ()=>{
+        navPhone.style.left = "0";
+    })
+    closeNav.addEventListener("click", ()=>{
+        navPhone.style.left = "-100%";
+    })
+</script>

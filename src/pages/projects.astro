@@ -1,0 +1,242 @@
+---
+import "../css/style.css";
+import PhoneNav from "../components/PhoneNav.astro";
+import Loader from "../components/Loader.astro";
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link href="favicon-light.png" rel="icon" media="(prefers-color-scheme: light)"/>
+    <link href="favicon-dark.png" rel="icon" media="(prefers-color-scheme: dark)"/>
+    <!-- iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"> </script>
+    <!-- poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Mannan • Projects</title>
+</head>
+<body class="font-[poppins] bg-dark1 text-light1">
+    <div class="body-container flex-grow h-[100svh] w-[100svw] overflow-hidden p-3 relative">
+        <Loader/>
+        <div class="body-wrapper flex gap-3 h-full">
+            
+            
+            <!-- ------------------------------------------------------------------------------------ -->
+			<!-- header-phone -->
+
+			<div class="nav-left-phone flex md:hidden z-30 flex-grow-0 flex-col justify-center h-[100svh] bg-dark1 rounded-lg w-[100svw]">
+				<div class="nav-phone-top-container z-40 p-5 flex justify-between items-center gap-3 absolute top-0 w-full">
+					<div class="flex gap-3 items-center">
+						<a href="/"><img class="w-12 h-12 rounded-full" src="logo.png" alt=""></a>
+						<a href="/"><div class="title title-lg font-semibold">Portfolio</div></a>
+					</div>
+					<button class="close-nav text-3xl relative top-1"><iconify-icon icon="material-symbols:left-panel-close"></iconify-icon></button>
+				</div>
+				<div class="nav-bottom-container p-5 w-full absolute bottom-0 left-0">
+					<div class="links-phone flex flex-col gap-3 mb-5">
+                        <div class="flex gap-3">
+                            <div class="w-full"></div>
+							<a href="/" class="nav-item flex flex-col gap-3 justify-center items-center w-full aspect-square rounded-lg text-light2 hover:text-light1 bg-dark2 hover:bg-dark1 transition">
+								<iconify-icon icon="fa:home" class="text-3xl"></iconify-icon>Home
+							</a>
+							<a href="/projects" class="nav-item flex flex-col gap-3 justify-center items-center w-full aspect-square rounded-lg text-light2 hover:text-light1 bg-dark2 hover:bg-dark1 transition">
+								<iconify-icon icon="fa-solid:tools" class="text-3xl"></iconify-icon>Projects
+							</a>
+						</div>
+					</div>
+					<div class="flex items-center gap-3">
+						<img class="w-12 h-12 rounded-full" src="pp3.jpg" alt="">
+						<div class="name-email-container flex flex-col gap-1">
+							<div class="name text-sm font-semibold">Md. Abdul Mannan </div>
+							<a class=" text-xs text-light2 hover:text-light1 transition" href="mailto:abdul.mannan6153@gmail.com">abdul.mannan6153@gmail.com</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<style>
+				.nav-left-phone{
+					position: absolute;
+					top: 0;
+					left: -100%;
+					transition: left 0.5s cubic-bezier(0,0,0,.96);
+				}
+			</style>
+			
+			<script>
+				var navPhone = document.querySelector(".nav-left-phone");
+				var showNav = document.querySelector(".show-nav");
+				var closeNav = document.querySelector(".close-nav");
+				showNav.addEventListener("click", ()=>{
+					navPhone.style.left = "0";
+				})
+				closeNav.addEventListener("click", ()=>{
+					navPhone.style.left = "-100%";
+				})
+			</script>
+
+
+            <!-- ------------------------------------------------------------------------------------ -->
+			<!-- header -->
+
+			<div class="nav-left flex-grow-0 hidden md:flex flex-col justify-between bg-dark1 rounded-lg w-[250px]">
+				<div class="nav-top-container p-3">
+					<div class="flex gap-5 items-center">
+						<a href="/"><img class="w-10 h-10 rounded-full" src="logo.png" alt=""></a>
+						<a href="/"><div class="title title-lg font-semibold">Portfolio</div></a>
+					</div>
+				</div>
+				<div class="nav-middle-container flex flex-col gap-3">
+					<a href="/" class="nav-item flex items-center px-5 py-3 rounded-lg text-light2 hover:text-light1 bg-dark1 hover:bg-dark2 transition"><iconify-icon icon="fa:home" class="text-xl mr-5"></iconify-icon>Home</a>
+					<a href="/projects" class="nav-item flex items-center px-5 py-3 rounded-lg bg-dark2"><iconify-icon icon="fa-solid:tools" class="text-xl mr-5"></iconify-icon>Projects</a>
+				</div>
+				<div class="nav-bottom-container flex items-center gap-3">
+					<img class="w-12 h-12 rounded-full" src="pp3.jpg" alt="">
+					<div class="name-email-container flex flex-col gap-1">
+						<div class="name text-sm font-semibold">Md. Abdul Mannan</div>
+						<a class="text-xs text-light2 hover:text-light1 transition" href="mailto:abdul.mannan6153@gmail.com">abdul.mannan6153@gmail.com</a>
+					</div>
+				</div>
+			</div>
+
+
+            
+            <div class="content-right flex-grow h-full bg-dark2 rounded-lg px-5 pb-3 overflow-scroll">
+
+                <PhoneNav/>
+                <style>
+                    .wrapper{
+                        line-height: 1.7;
+                    }
+                </style>
+                <div class="wrapper max-w-[800px] mx-auto pt-10">
+                    <div class="projects-container flex flex-col gap-32">
+                        <div class="project-container">
+                            
+                        
+        
+                        <!-- --------------------------------------------------------------------------------------------------------- -->
+                        
+                        
+                        
+                        <div class="project-container">
+                            <div class="title text-sm text-light2 mb-1">Personal Projects</div>
+                            <div class="title text-3xl md:text-5xl font-bold mb-5">TravelHub</div>
+                            <div class="flex flex-col gap-7">
+                                <img class="rounded-lg" src="TravelHub.png" alt="">
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1 summary-title">Summary</div>
+                                    <div class="summary-content">Welcome to TravelHub – your ultimate travel companion. This project is designed to revolutionize the way you plan and experience your travel adventures.</div>
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1 features-title">Features</div>
+                                    <div class="features-content">
+                                        <div class="">• Explore Destinations</div>
+                                        <div class="">• Trip Planner</div>
+                                        <div class="">• User Reviews</div>
+                                    </div>
+                                </div>
+                                <div class="text-sm text-light2 mb-2 technical-title">Technical Details</div>
+                                <div class="techs-container flex flex-col gap-4 p-5 bg-dark2 rounded-lg shadow-lg">
+                                    <div class="tech-item flex items-center">
+                                        <strong class="tech-category">Frontend:</strong> <span>HTML, CSS, JavaScript, React.js, Bootstrap</span>
+                                    </div>
+                                    <div class="tech-item flex items-center">
+                                        <strong class="tech-category">Backend:</strong> <span>Node.js, Express.js</span>
+                                    </div>
+                                    <div class="tech-item flex items-center">
+                                        <strong class="tech-category">Database:</strong> <span>MongoDB</span>
+                                    </div>
+                                    <div class="tech-item flex items-center">
+                                        <strong class="tech-category">Version Control:</strong> <span>Git & GitHub</span>
+                                    </div>
+                                    <div class="tech-item flex items-center">
+                                        <strong class="tech-category">Templating Engine:</strong> <span>EJS</span>
+                                    </div>
+                                    <div class="tech-item flex items-center">
+                                        <strong class="tech-category">Middleware:</strong> <span>Method-Override, Cookie-Parser</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                                
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">Links</div>
+                                    <div class="">• Github: <a class="underline text-light2" target="_blank" href="https://github.com/mannan6153/TravelHub">https://github.com/mannan6153/TravelHub</a></div>
+                                </div>
+                            </div>                        
+                        </div>
+                        
+                        
+                        
+                        <!-- --------------------------------------------------------------------------------------------------------- -->
+                        
+                        
+                        
+                        <div class="project-container">
+                            <div class="title text-sm text-light2 mb-1">Personal Projects</div>
+                            <div class="title text-3xl md:text-5xl font-bold mb-5">FitCode-Emporium</div>
+                            <div class="flex flex-col gap-7">
+                                <img class="rounded-lg" src="fitness.png" alt="">
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1 summary-title">Summary</div>
+                                    <div class="summary-content">
+                                        FitCode Emporium is an online platform that allows users to explore and purchase fitness products, read engaging blog posts, manage their profiles, and more. With a modern and user-friendly interface, FitCode Emporium ensures a delightful shopping experience.
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1 features-title">Features</div>
+                                    <div class="features-content">
+                                        <div class="">• Explore Product</div>
+                                        <div class="">• User Authentication</div>
+                                        <div class="">• User Profile</div>
+                                        <div class="">• Blog</div>
+                                        <div class="">• Contact Us</div>
+                                    </div>
+                                </div>
+                                <div class="text-sm text-light2 mb-2 technical-title">Technical Details</div>
+                                <div class="techs-container flex flex-col gap-4 p-5 bg-dark2 rounded-lg shadow-lg">
+                                    <div class="tech-item flex items-center">
+                                        <strong class="tech-category">Frontend:</strong> <span>HTML, CSS, JavaScript, Tailwind CSS</span>
+                                    </div>
+                                    <div class="tech-item flex items-center">
+                                        <strong class="tech-category">Backend:</strong> <span>Python, Django</span>
+                                    </div>
+                                    <div class="tech-item flex items-center">
+                                        <strong class="tech-category">Database:</strong> <span>PostgreSQL</span>
+                                    </div>
+                                    <div class="tech-item flex items-center">
+                                        <strong class="tech-category">Version Control:</strong> <span>Git & GitHub</span>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">Links</div>
+                                    <div class="">• Github: <a class="underline text-light2" target="_blank" href="https://github.com/mannan6153/FitCode-Emporium">https://github.com/mannan6153/FitCode-Emporium</a></div>
+                                </div>
+                            </div>
+                                                
+                        </div>
+        
+                        <div class="text leading-normal text-sm mb-10">More projects can be found on <a class="underline mb-3 text-light2" target="_blank" href="https://github.com/mannan6153?tab=repositories">here</a></div>
+        
+                    </div>
+                    
+        
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</body>
+</html>

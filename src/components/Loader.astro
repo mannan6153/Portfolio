@@ -1,0 +1,45 @@
+<div class="loader-container bg-dark1 text-light1 absolute top-0 left-0 w-[100svw] h-[100svh] z-[999] transition p-3 rounded-lg">
+    <div class="bg-dark2 w-full h-full rounded-lg">
+        <div class="loader-wrapper h-full flex justify-center items-center">
+            <div class="flex flex-col text-9xl font-semibold">
+                <div class="text-upper flex items-center gap-2">
+                    <div class="mr-3">L</div>
+                    <div class="loader-svg">
+                        <svg width="120" height="120" viewBox="0 0 264 264" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#e1e2ea" fill-rule="evenodd" clip-rule="evenodd" d="M132 264C131.736 191.188 72.7393 132.245 0 132.245C72.9015 132.245 132 73.036 132 0C132.263 72.8119 191.261 131.755 264 131.755C191.097 131.755 132 190.964 132 264Z"/>
+                        </svg>                        
+                    </div>
+                </div>
+                <div class="text-lower w-52">AD<br>ING</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    setTimeout(function() {
+        document.querySelector(".loader-container").classList.remove("bg-dark1");
+        document.querySelector(".loader-container").classList.add("slide");
+    }, 500);
+</script>
+
+<style>
+    .slide {
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+    }
+
+    @keyframes loaderRotate{
+        0%{
+            rotate: 0deg;
+        }
+        100%{
+            rotate:360deg;
+        }
+    }
+    .loader-svg{
+        animation: loaderRotate 3s infinite linear;
+    }
+</style>

@@ -1,0 +1,103 @@
+:root {
+    --dark1: #0e0f15;
+    --dark2: #2f3245;
+    --light1: #e1e2ea;
+    --light2: #c3c5d5;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 0.3rem;
+    height: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(156, 163, 175);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 163, 175, 0.822);
+}
+
+::selection {
+    color: #e1e2ea;
+    background: #000000;
+}
+
+/* styles for Summary, Features, and Technical Details */
+.summary-title,
+.features-title,
+.technical-title {
+    font-size: 1.2rem;
+    color: var(--light2);
+    margin-bottom: 0.5rem;
+}
+
+.summary-content,
+.features-content {
+    color: var(--light1);
+    background-color: var(--dark2);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Technical Details styles */
+.techs-container {
+    padding: 20px;
+    background-color: var(--dark2);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tech-item {
+    color: var(--light1);
+    font-size: 1rem;
+    background-color: transparent;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--dark1);
+    margin-bottom: 10px;
+}
+
+.tech-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.tech-category {
+    color: var(--light2);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.tech-item span {
+    color: var(--light1);
+}
+
+/* .nav-tab-active{
+    display: flex;
+    align-items: center;
+    padding: 12px 20px 12px 20px;
+    border-radius: 8px;
+    background-color: var(--dark2);
+}
+.nav-tab{
+    display: flex;
+    align-items: center;
+    padding: 12px 20px 12px 20px;
+    border-radius: 8px;
+    color: var(--light2);
+    background-color: var(--dark1);
+    transition: 150ms ease-in-out;
+}
+.nav-tab:hover{
+    color: var(--light1);
+    background-color: var(--dark2);
+} */

@@ -1,0 +1,253 @@
+---
+import "../css/style.css";
+import PhoneNav from "../components/PhoneNav.astro";
+import Loader from "../components/Loader.astro";
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- favicon -->
+    <link href="favicon-light.png" rel="icon" media="(prefers-color-scheme: light)"/>
+    <link href="favicon-dark.png" rel="icon" media="(prefers-color-scheme: dark)"/>
+    <!-- iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <!-- poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Mannan • Portfolio</title>
+</head>
+<body class="font-[poppins] bg-dark1 text-light1">
+    <div class="body-container flex-grow  h-[100svh] w-[100svw] overflow-hidden p-3 relative">
+		<Loader/>
+        <div class="body-wrapper flex gap-3 h-full">
+            
+			
+			<!-- ------------------------------------------------------------------------------------ -->
+			<!-- header-phone -->
+
+			<div class="nav-left-phone flex md:hidden z-30 flex-grow-0 flex-col justify-center h-[100svh] bg-dark1 rounded-lg w-[100svw]">
+				<div class="nav-phone-top-container z-40 p-5 flex justify-between items-center gap-3 absolute top-0 w-full">
+					<a href="/" class="flex gap-3 items-center">
+						<img class="w-12 h-12 rounded-full" src="logo.png" alt="">
+						<div class="title title-lg font-semibold">Portfolio</div>
+					</a>
+					<button class="close-nav text-3xl relative top-1"><iconify-icon icon="material-symbols:left-panel-close"></iconify-icon></button>
+				</div>
+				<div class="nav-bottom-container p-5 w-full absolute bottom-0 left-0">
+					<div class="links-phone flex flex-col gap-3 mb-5">
+                        <div class="flex gap-3">
+                            <div class="w-full"></div>
+							<a href="/" class="nav-item flex flex-col gap-3 justify-center items-center w-full aspect-square rounded-lg text-light2 hover:text-light1 bg-dark2 hover:bg-dark1 transition">
+								<iconify-icon icon="fa:home" class="text-3xl"></iconify-icon>Home
+							</a>
+							<a href="/projects" class="nav-item flex flex-col gap-3 justify-center items-center w-full aspect-square rounded-lg text-light2 hover:text-light1 bg-dark2 hover:bg-dark1 transition">
+								<iconify-icon icon="fa-solid:tools" class="text-3xl"></iconify-icon>Projects
+							</a>
+						</div>
+					</div>
+					<div class="flex items-center gap-3">
+						<img class="w-12 h-12 rounded-full" src="pp3.jpg" alt="">
+						<div class="name-email-container flex flex-col gap-1">
+							<div class="name text-sm font-semibold">Md. Abdul Mannan</div>
+							<a class=" text-xs text-light2 hover:text-light1 transition" href="mailto:abdul.mannan6153@gmail.com">abdul.mannan6153@gmail.com</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<style>
+				.nav-left-phone{
+					position: absolute;
+					top: 0;
+					left: -100%;
+					transition: left 0.3s cubic-bezier(0,0,0,.96);
+				}
+			</style>
+			
+			<script>
+				var navPhone = document.querySelector(".nav-left-phone");
+				var showNav = document.querySelector(".show-nav");
+				var closeNav = document.querySelector(".close-nav");
+				showNav.addEventListener("click", ()=>{
+					navPhone.style.left = "0";
+				})
+				closeNav.addEventListener("click", ()=>{
+					navPhone.style.left = "-100%";
+				})
+			</script>
+
+
+            <!-- ------------------------------------------------------------------------------------ -->
+			<!-- header -->
+
+			<div class="nav-left flex-grow-0 hidden md:flex flex-col justify-between bg-dark1 rounded-lg w-[250px]">
+				<div class="nav-top-container p-3">
+					<a href="/" class="flex gap-5 items-center">
+						<img class="w-10 h-10 rounded-full" src="logo.png" alt="">
+						<div class="title title-lg font-semibold">Portfolio</div>
+                    </a>
+				</div>
+				<div class="nav-middle-container flex flex-col gap-3">
+					<a href="/" class="nav-item flex items-center px-5 py-3 rounded-lg bg-dark2"><iconify-icon icon="fa:home" class="text-xl mr-5"></iconify-icon>Home</a>
+					<a href="/projects" class="nav-item flex items-center px-5 py-3 rounded-lg text-light2 hover:text-light1 bg-dark1 hover:bg-dark2 transition"><iconify-icon icon="fa-solid:tools" class="text-xl mr-5"></iconify-icon>Projects</a>
+				</div>
+				<div class="nav-bottom-container flex items-center gap-3">
+					<img class="w-12 h-12 rounded-full" src="pp3.jpg" alt="">
+					<div class="name-email-container flex flex-col gap-1">
+						<div class="name text-sm font-semibold"> Md. Abdul Mannan</div>
+						<a class="text-xs text-light2 hover:text-light1 transition" href="mailto:abdul.mannan6153@gmail.com">abdul.mannan6153@gmail.com</a>
+					</div>
+				</div>
+			</div>
+
+
+
+			
+            
+            <div class="content-right flex-grow h-full bg-dark2 rounded-lg px-5 pb-3 overflow-scroll">
+				
+				<PhoneNav/>
+				
+
+
+				
+
+				<div class="wrapper max-w-[800px] mx-auto pt-10">
+
+
+
+					<div class="hero-container mb-5">
+						<img class="w-full md:w-96 md:h-w-96 aspect-square object-cover rounded-full mb-5" src="pp3.jpg" alt="">
+						<div class="name text-5xl font-bold mb-1">Md. Abdul Mannan</div>
+						<div class="name text-sm md:text-base text-light2">Full Stack Web Developer</div>
+					</div>
+
+					
+					<!-- <a class="block h-fit" href="CV_Md-Abdul-Mannan.pdf" download="CV_Md-Abdul-Mannan">Download!</a> -->
+					<div class="bg-dark1 p-3 rounded-lg flex flex-col md:flex-row gap-3 justify-between items-center mb-10">
+						<div class="title text-center md:text-left text-xl font-semibold md:ml-3">Check Out My CV</div>
+						<a class="bg-dark2 hover:bg-dark1 text-center text-sm w-full md:w-auto px-5 py-3 rounded-lg transition" target="_blank" href="https://drive.google.com/file/d/1zVrkY-yJyLIa8iDUYaX9EbiXLxu7ZbTr/view?usp=sharing">open link in new tab</a>
+					</div>
+
+
+
+					<div class="title text-3xl font-semibold mb-3">About Me</div>
+					<div class="about-text leading-normal mb-10"> I am a skilled and versatile full stack web developer, proficient in both front-end and back-end development, as well as UI/UX design. 
+						I also have a strong background in project management and machine learning. 
+						I am confident in my ability to manage and create interactive and engaging websites and applications. 
+						I am currently looking for an entry-level position to enhance my skills and expand my network. 
+						I am fluent in English and Bengali, and have experience in competitive programming, which has honed my problem-solving abilities and attention to detail.
+					</div>
+					
+					<div class="title text-3xl font-semibold mb-3">Technical Skills</div>
+					<div class="title text-xs text-light2 mb-3">Programming Languages</div>
+					<div class="skills-container grid grid-cols-2 md:grid-cols-3 gap-5 mb-7">
+						<div class="skill flex items-center gap-3">
+							<iconify-icon class="text-3xl p-2 aspect-square rounded-full bg-light1 text-dark2" icon="bxl:javascript"></iconify-icon>
+							JavaScript
+						</div>
+						<div class="skill flex items-center gap-3">
+							<iconify-icon class="text-3xl p-2 aspect-square rounded-full bg-light1 text-dark2" icon="la:python"></iconify-icon>
+							Python
+						</div>
+						<div class="skill flex items-center gap-3">
+							<iconify-icon class="text-3xl p-2 aspect-square rounded-full bg-light1 text-dark2" icon="la:java"></iconify-icon>
+							Java
+						</div>
+						
+					</div>
+		
+					<div class="title text-xs text-light2 mb-3">Frameworks & Libraries</div>
+					<div class="skills-container grid grid-cols-2 md:grid-cols-3 gap-5 mb-7">
+                        <div class="skill flex items-center gap-3">
+                            <iconify-icon class="text-5xl aspect-square rounded-full bg-dark2 text-light1" icon="akar-icons:nextjs-fill"></iconify-icon>
+                            Next.js
+                        </div>
+                        <div class="skill flex items-center gap-3">
+                            <iconify-icon class="text-3xl p-2 aspect-square rounded-full bg-light1 text-dark2" icon="teenyicons:react-outline"></iconify-icon>
+                            React
+                        </div>
+						<div class="skill flex items-center gap-3">
+							<iconify-icon class="text-3xl p-2 aspect-square rounded-full bg-light1 text-dark2" icon="bxl:django"></iconify-icon>
+							Django
+						</div>
+						<div class="skill flex items-center gap-3">
+                            <iconify-icon class="text-3xl p-2 aspect-square rounded-full bg-light1 text-dark2" icon="simple-icons:tailwindcss"></iconify-icon>
+							TailwindCSS
+						</div>
+                        <div class="skill flex items-center gap-3">
+                            <iconify-icon class="text-3xl p-2 aspect-square rounded-full bg-light1 text-dark2" icon="devicon-plain:astro"></iconify-icon>
+                            Astro
+                        </div>
+					</div>
+		
+		
+					<div class="title text-xs text-light2 mb-3">Databases</div>
+					<div class="skills-container grid grid-cols-2 md:grid-cols-3 gap-5 mb-7">
+						<div class="skill flex items-center gap-3">
+							<iconify-icon class="text-3xl p-2 aspect-square rounded-full bg-light1 text-dark2" icon="bxl:postgresql"></iconify-icon>
+							PostgreSQL
+						</div>
+						<div class="skill flex items-center gap-3">
+							<iconify-icon class="text-3xl p-2 aspect-square rounded-full bg-light1 text-dark2" icon="fontisto:mysql"></iconify-icon>
+							MySQL
+						</div>
+					</div>
+					
+					<div class="title text-xs text-light2 mb-3">Tools</div>
+					<div class="skills-container grid grid-cols-2 md:grid-cols-3 gap-5 mb-10">
+						<div class="skill flex items-center gap-3">
+							<iconify-icon class="text-3xl p-2 aspect-square rounded-full bg-light1 text-dark2" icon="bi:git"></iconify-icon>
+							Git
+						</div>
+						<div class="skill flex items-center gap-3">
+							<iconify-icon class="text-3xl p-2 aspect-square rounded-full bg-light1 text-dark2" icon="codicon:vscode"></iconify-icon>
+							VSCode
+						</div>
+					</div>
+
+
+					<div class="title text-3xl font-semibold mb-3">Soft Skills</div>
+					<div class="soft-skills-container flex flex-col md:flex-row gap-3 flex-wrap mb-10">
+						<div class="soft-skill">Clear & Effective Communication (Both verbal and written)</div><div class="hidden md:block">•</div>
+						<div class="soft-skill">Collaboration & Teamwork</div><div class="hidden md:block">•</div>
+						<div class="soft-skill">Problem Solving</div><div class="hidden md:block">•</div>
+						<div class="soft-skill">Time Management</div><div class="hidden md:block">•</div>
+						<div class="soft-skill">Adaptability</div><div class="hidden md:block">•</div>
+						<div class="soft-skill">Interpersonal Skills</div><div class="hidden md:block">•</div>
+						<div class="soft-skill">Leadership</div><div class="hidden md:block">•</div>
+						<div class="soft-skill">Growth Mentality</div><div class="hidden md:block">•</div>
+						<div class="soft-skill">Creativity</div>
+					</div>
+
+					<div class="title text-3xl font-semibold mb-3">Links</div>
+					<div class="info-container text-sm flex flex-col gap-3 mb-10">
+					
+						<a target="_blank" href="mailto:abdul.mannan6153@gmail.com" class="info w-fit text-light2 flex items-center gap-3 underline">
+							<iconify-icon class="text-3xl text-light1" icon="ic:round-email"></iconify-icon>
+							abdul.mannan6153@gmail.com
+						</a>
+						<a target="_blank" href="https://github.com/mannan6153" class="info w-fit text-light2 flex items-center gap-3 underline">
+							<iconify-icon class="text-3xl text-light1" icon="mdi:github"></iconify-icon>
+							https://github.com/mannan6153
+						</a>
+						<a target="_blank" href="https://www.linkedin.com/in/abdul-mannan41/" class="info w-fit text-light2 flex items-center gap-3 underline">
+							<iconify-icon class="text-3xl text-light1" icon="mdi:linkedin"></iconify-icon>
+							https://www.linkedin.com/in/abdul-mannan41/
+						</a>
+						
+					</div>
+
+		
+				</div>
+			</div>
+
+            
+        </div>
+    </div>
+</body>
+</html>
+
